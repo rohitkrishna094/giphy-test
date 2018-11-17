@@ -3,6 +3,7 @@ import './App.css';
 import GifBox from './components/GifBox';
 import SearchBox from './components/SearchBox';
 import Navbar from './containers/Navbar';
+import History from './components/History';
 
 class App extends Component {
   render() {
@@ -10,7 +11,16 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <SearchBox />
-        <GifBox />
+        <div className="container-fluid">
+          <div className="row ">
+            <div className="col-2">
+              <History />
+            </div>
+            <div className="col-10">
+              <GifBox />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

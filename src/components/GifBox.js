@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from '../containers/Card';
 import { connect } from 'react-redux';
 import { getGifs } from '../store/actions/GifActions';
+import './GifBox.css';
 
 class GifBox extends Component {
   state = { data: [] };
@@ -12,7 +13,7 @@ class GifBox extends Component {
 
   render() {
     return (
-      <div className="App_scrollbar container">
+      <div className="GifBox_scrolbar">
         {this.props.data.map(e => (
           <Card entry={e} key={e.id} />
         ))}

@@ -32,12 +32,6 @@
   }
 }
 
-.App_scrollbar {
-  overflow: auto;
-  max-width: 1500px;
-  max-height: 800px;
-}
-
 /* .App_scrollbar img {
   padding: 10px;
 } */

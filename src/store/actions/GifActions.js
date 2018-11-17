@@ -7,6 +7,7 @@ export const getGifs = word => {
     fetch(url)
       .then(res => res.json())
       .then(data => {
+        dispatch({ type: 'ADD_NEW_LINK', payload: { url: url, text: word } });
         dispatch({ type: 'SEARCH_GIFS', payload: data.data });
       });
   };
