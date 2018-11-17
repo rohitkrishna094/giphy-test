@@ -16,6 +16,7 @@ export default function Card(props) {
           height: '200px'
         }}
         src={entry.images.fixed_height.url}
+        alt={entry.title}
       />
       {/* <div className="card-body">
         <h5 className="card-title">{entry.title}</h5>
