@@ -10,7 +10,7 @@ export default function Card(props) {
   return (
     <div className="card" style={style}>
       <img
-        className="card-img-top img-thumbnail img-fluid"
+        className="card-img-top rounded img-fluid px-3 py-3"
         style={{
           width: '300px',
           height: '200px'

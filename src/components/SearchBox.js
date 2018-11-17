@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getGifs } from '../store/actions/GifActions';
 
-export default class SearchBox extends Component {
+class SearchBox extends Component {
   state = { word: '' };
   onSubmit = e => {
     e.preventDefault();
-    this.run(this.state.word);
-    console.log(this.state.word);
+    this.props.getGifs(this.state.word);
   };
 
   onChange = e => {
-    // console.log('changed');
     this.setState({ word: e.target.value });
   };
 
@@ -24,3 +24,20 @@ export default class SearchBox extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    data: state.giphy.data
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getGifs: word => dispatch(getGifs(word))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchBox);
