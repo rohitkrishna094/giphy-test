@@ -9,10 +9,11 @@ class History extends Component {
         <h3>History</h3>
         {this.props.links.map(link => (
           <React.Fragment key={Math.random()}>
-            <a href={link.url} target="_blank">
-              {link.text}
-            </a>
+            <span>{link.text}</span>
             <br />
+            {/* <a href={link.url} target="_blank">
+              {link.text}
+            </a> */}
           </React.Fragment>
         ))}
       </div>

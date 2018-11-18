@@ -1,4 +1,4 @@
-const initialState = { data: [], links: [] };
+const initialState = { data: [] };
 
 const giphyReducer = (state = initialState, action) => {
   switch (action.type) {

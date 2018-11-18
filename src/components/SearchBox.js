@@ -7,6 +7,7 @@ class SearchBox extends Component {
   onSubmit = e => {
     e.preventDefault();
     this.props.getGifs(this.state.word);
+    this.setState({ word: '' });
   };
 
   onChange = e => {
