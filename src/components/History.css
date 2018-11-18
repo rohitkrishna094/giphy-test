@@ -1,3 +1,15 @@
 .History_cursor {
     cursor: pointer;
 }
+
+.History_cursor:hover {
+    background-color: #808B96;
+}
+
+.History_cursor:first-child {
+    background-color: #DF691A;
+}
+
+.History_cursor:first-child:hover {
+    background-color: #C85E17;
+}
