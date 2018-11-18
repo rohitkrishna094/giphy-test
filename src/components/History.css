@@ -13,3 +13,11 @@
 .History_cursor:first-child:hover {
     background-color: #C85E17;
 }
+
+.fa-trash-alt:hover {
+    color: red;
+}
+
+.fa-trash-alt {
+    color: #5BC0DE;
+}

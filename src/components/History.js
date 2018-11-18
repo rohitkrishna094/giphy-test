@@ -22,10 +22,7 @@ class History extends Component {
             <React.Fragment key={link.id}>
               <li className="list-group-item History_cursor">
                 <span onClick={e => this.onClick(e)}>{link.text}</span>
-                <i
-                  className="ml-2 mt-1 fas fa-trash-alt float-right text-info"
-                  onClick={e => this.onDelete(e, link.id)}
-                />
+                <i className="ml-2 mt-1 fas fa-trash-alt float-right " onClick={e => this.onDelete(e, link.id)} />
               </li>
               {/* <br /> */}
             </React.Fragment>
