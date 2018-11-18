@@ -16,7 +16,7 @@ class GifBox extends Component {
       <div className="GifBox_scrolbar">
         {this.props.data.map(e => {
           const image = this.props.pause ? e.images.fixed_height_still.url : e.images.fixed_height.url;
-          const object = { image, title: e.title };
+          const object = { image, title: e.titl };
           return <Card entry={object} key={e.id} />;
         })}
       </div>
