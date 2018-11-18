@@ -3,7 +3,7 @@ import React from 'react';
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="http://localhost:3000">
         Navbar
       </a>
       <button
@@ -20,22 +20,22 @@ export default function Navbar() {
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="http://localhost:3000">
               Home <span className="sr-only">(current)</span>
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="http://localhost:3000">
               Features
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="http://localhost:3000">
               Pricing
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="http://localhost:3000">
               About
             </a>
           </li>
