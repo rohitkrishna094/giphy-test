@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getGifs, getTrendingGifs } from '../store/actions/GifActions';
+import { getGifs, getTrendingGifs, pauseGifs } from '../store/actions/GifActions';
 
 class SearchBox extends Component {
-  state = { word: '' };
+  state = { word: '', pauseText: 'Pause' };
 
   onTrendingClick = e => {
     this.props.getTrendingGifs();
@@ -15,6 +15,13 @@ class SearchBox extends Component {
       this.props.getGifs(this.state.word);
       this.setState({ word: '' });
     }
+  };
+
+  onPause = e => {
+    const text = this.state.pauseText;
+    const animating = text === 'Pause' ? true : false;
+    this.setState({ pauseText: animating ? 'Play' : 'Pause' });
+    this.props.pauseGifs(animating);
   };
 
   onChange = e => {
@@ -29,6 +36,9 @@ class SearchBox extends Component {
           <input type="submit" value="Send" className="btn btn-secondary" />
           <button className="ml-2 btn btn-primary" onClick={e => this.onTrendingClick(e)}>
             Trending
+          </button>
+          <button className="ml-2 btn btn-danger" onClick={e => this.onPause(e)}>
+            {this.state.pauseText}
           </button>
         </form>
       </div>
@@ -45,7 +55,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getGifs: word => dispatch(getGifs(word)),
-    getTrendingGifs: () => dispatch(getTrendingGifs())
+    getTrendingGifs: () => dispatch(getTrendingGifs()),
+    pauseGifs: status => dispatch(pauseGifs(status))
   };
 };
 

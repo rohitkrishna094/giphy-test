@@ -15,7 +15,7 @@ export default function Card(props) {
           width: '300px',
           height: '200px'
         }}
-        src={entry.images.fixed_height.url}
+        src={entry.image}
         alt={entry.title}
       />
       {/* <div className="card-body">

@@ -14,9 +14,11 @@ class GifBox extends Component {
   render() {
     return (
       <div className="GifBox_scrolbar">
-        {this.props.data.map(e => (
-          <Card entry={e} key={e.id} />
-        ))}
+        {this.props.data.map(e => {
+          const image = this.props.pause ? e.images.fixed_height_still.url : e.images.fixed_height.url;
+          const object = { image, title: e.title };
+          return <Card entry={object} key={e.id} />;
+        })}
       </div>
     );
   }
@@ -24,7 +26,8 @@ class GifBox extends Component {
 
 const mapStateToProps = state => {
   return {
-    data: state.giphy.data
+    data: state.giphy.data,
+    pause: state.giphy.pause
   };
 };
 

@@ -23,3 +23,9 @@ export const getTrendingGifs = () => {
       });
   };
 };
+
+export const pauseGifs = status => {
+  return (dispatch, getState) => {
+    dispatch({ type: 'PAUSE_GIFS', payload: status });
+  };
+};
