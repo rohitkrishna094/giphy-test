@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addNewLink } from '../store/actions/HistoryAction';
 import './History.css';
 import { getGifs } from '../store/actions/GifActions';
+import { deleteWord } from '../store/actions/HistoryAction';
 
 class History extends Component {
   onClick = e => {
@@ -10,17 +10,22 @@ class History extends Component {
     this.props.getGifs(e.target.innerHTML);
   };
 
+  onDelete = (e, id) => {
+    this.props.deleteWord(id);
+  };
+
   render() {
     return (
       <div>
         <h3>History</h3>
         {this.props.links.map(link => (
-          <React.Fragment key={Math.random()}>
-            <span className="History_cursor" onClick={e => this.onClick(e)}>
+          <div className="History_cursor" key={link.id}>
+            <span className="" onClick={e => this.onClick(e)}>
               {link.text}
             </span>
+            <i className="ml-2 fas fa-trash-alt float-right" onClick={e => this.onDelete(e, link.id)} />
             <br />
-          </React.Fragment>
+          </div>
         ))}
       </div>
     );
@@ -35,8 +40,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addNewLink: link => dispatch(addNewLink(link)),
-    getGifs: word => dispatch(getGifs(word))
+    getGifs: word => dispatch(getGifs(word)),
+    deleteWord: id => dispatch(deleteWord(id))
   };
 };
 

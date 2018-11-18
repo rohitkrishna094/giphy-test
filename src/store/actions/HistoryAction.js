@@ -1,5 +1,5 @@
-export const addNewLink = link => {
+export const deleteWord = id => {
   return (dispatch, getState) => {
-    dispatch({ type: 'ADD_NEW_LINK', payload: link });
+    dispatch({ type: 'DELETE_LINK', payload: { id } });
   };
 };
