@@ -5,8 +5,9 @@ import { getGifs } from '../store/actions/GifActions';
 import { deleteWord } from '../store/actions/HistoryAction';
 
 class History extends Component {
-  onClick = e => {
-    this.props.getGifs(e.target.innerHTML);
+  onClick = (e, text) => {
+    // this.props.getGifs(e.target.innerHTML);
+    this.props.getGifs(text);
   };
 
   onDelete = (e, id) => {
@@ -20,9 +21,9 @@ class History extends Component {
         <ul className="list-group ">
           {this.props.links.map(link => (
             <React.Fragment key={link.id}>
-              <li className="list-group-item History_cursor">
-                <span onClick={e => this.onClick(e)}>{link.text}</span>
-                <i className="ml-2 mt-1 fas fa-trash-alt float-right " onClick={e => this.onDelete(e, link.id)} />
+              <li className="list-group-item History_cursor" onClick={e => this.onClick(e, link.text)}>
+                <span>{link.text}</span>
+                <i className="ml-2 mt-1 fas fa-trash-alt float-right" onClick={e => this.onDelete(e, link.id)} />
               </li>
               {/* <br /> */}
             </React.Fragment>

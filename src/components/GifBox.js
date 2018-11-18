@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../containers/Card';
+import Card from './Card';
 import { connect } from 'react-redux';
 import { getGifs } from '../store/actions/GifActions';
 import './GifBox.css';

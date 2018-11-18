@@ -1,0 +1,8 @@
+.Card_cursor {
+    cursor: pointer;
+}
+
+.Card_cursor:hover {
+    /* background-color: #DF691A; */
+    background-color: #C85E17;
+}
