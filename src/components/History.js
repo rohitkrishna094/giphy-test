@@ -7,10 +7,12 @@ import { deleteWord } from '../store/actions/HistoryAction';
 class History extends Component {
   onClick = (e, text) => {
     // this.props.getGifs(e.target.innerHTML);
+    e.stopPropagation();
     this.props.getGifs(text);
   };
 
   onDelete = (e, id) => {
+    e.stopPropagation();
     this.props.deleteWord(id);
   };
 
